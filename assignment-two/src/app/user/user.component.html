@@ -1,0 +1,11 @@
+<div class="userdiv">
+<p>This is User Component</p>
+<br>
+
+<label>UserName:</label>
+<input class="form-control" type="text" [(ngModel)] = "userName" >
+<br>
+<p>TwoWay Binding: {{ userName }}</p>
+
+<button class="btn btn-primary" [disabled] = " userName ==='' " (click)= " userName='' ">Reset</button>
+</div>
