@@ -1,0 +1,9 @@
+<div class="detaildiv">
+<h3> Details Page</h3>
+<button class="btn btn-primary" (click) = "toggleDisplay()" >Display Details</button>
+<br>
+<p *ngIf="displayDetails">Secret Password=tuna</p>
+
+<p *ngFor="let cnt of clickArr" [ngStyle] = "{backgroundColor: cnt> 5? 'blue' : ''}" [ngClass] = "{textwhite: cnt > 5 }" >Number Of Click: {{cnt}} </p>
+
+</div>
