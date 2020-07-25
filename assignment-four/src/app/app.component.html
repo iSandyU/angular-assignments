@@ -1,0 +1,17 @@
+<app-game-control (gameStarted) = "startGame($event)" #gameControl></app-game-control>
+
+<div class="row">
+  <div class="col-md-12" *ngFor="let counter of counters">
+      
+        <div class="gameeven" *ngIf="counter%2===0 ;  else gameodd">
+            <app-even [counter]="counter"></app-even>
+        </div>
+        <ng-template #gameodd>
+          <div class="gameodd">
+              <app-odd [counter]="counter"></app-odd>
+          </div>
+        </ng-template>
+  </div>
+
+</div>
+
