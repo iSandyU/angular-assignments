@@ -1,0 +1,60 @@
+<form (ngSubmit)="onSubmit()" #f="ngForm">
+  <div class="row">
+
+    <div class="col-sm-4">
+      <div class="uNameLbl">
+        <label for="usrName">Mail Address:</label>
+      </div>
+      <div class="spaceline">
+        <br>
+      </div>
+      <div class="subsdrpdwnLbl">
+        <label for="subsdrpdwn">Subcription:</label>
+      </div>
+      <div class="spaceline">
+        <br>
+      </div>
+      <div class="passwordLbl">
+        <label for="password">Password:</label>
+      </div>
+      <div class="spaceline">
+        <br>
+      </div>
+      <div class="submitLbl">
+        <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit</button>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="uNameInput">
+
+        <input type="text" ngModel name="emailaddress" required email #emailaddress="ngModel">
+        <br>
+        <span *ngIf="!emailaddress.valid && emailaddress.touched" [ngClass]="{inputerror: !emailaddress.valid && emailaddress.touched}">Please enter email address!</span>
+      </div>
+      <div class="spaceline">
+        <br>
+      </div>
+      <div class="subsdrpdwnselect">
+        <select name="subcription" id="subcription" [ngModel]="'Pro'">
+          <option *ngFor="let s of subcriptions">{{s}}</option>
+        </select>
+      </div>
+      <div class="spaceline">
+        <br>
+      </div>
+      <div class="passworddiv">
+        <input type="password" required name="password" ngModel>
+      </div>
+
+    </div>
+  </div>
+ <!--  <div class="row" *ngIf="myform.valid">
+      <div class="col-md-12">
+              <span>You entered:</span>
+              <br>
+              Username: {{myform.emailaddress}} <br>
+              Subcription: {{myform.subcription}} <br>
+              Password: {{myform.password}}
+      </div>
+  </div> -->
+</form>
