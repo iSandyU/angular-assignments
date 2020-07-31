@@ -1,0 +1,60 @@
+<div class="container">
+
+  <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+
+      <div class="row">
+
+          <div class="col-sm-4">
+              <div >
+                  <label name="projectnamelabel" >Project Name:</label>
+              </div>
+              <div class="spaceline">
+                  <br>
+              </div>
+              <div >
+                <label name="maillabel">Mail:</label>
+              </div>
+              <div class="spaceline">
+                  <br>
+              </div>
+              <div >
+                <label name="projectstatuslable">Project Status:</label>
+              </div>
+              <div class="spaceline">
+                  <br>
+              </div>
+              <div >
+                <button type="submit" class="btn btn-primary right-align">Submit</button>
+              </div>
+
+          </div>
+          <div class="col-sm-8">
+
+            <div >
+              <input type="text" class="form-control" formControlName="projectname">
+            </div>
+            <div class="spaceline">
+                <br>
+            </div>
+            <div >
+              <input type="text" class="form-control" formControlName="mailaddress">
+            </div>
+            <div class="spaceline">
+                <br>
+            </div>
+            <div >
+              <select class="form-control" formControlName="projectstatus">
+                    <option value="stable">Stable</option>
+                    <option value="critical">Critical</option>
+                    <option value="finished">Finished</option>
+              </select>
+            </div>
+            <div class="spaceline">
+                <br>
+            </div>
+
+          </div>
+      </div>
+  </form>
+
+</div>
